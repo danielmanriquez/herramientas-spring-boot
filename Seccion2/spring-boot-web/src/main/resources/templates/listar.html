@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Listar</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1 th:text="${titulo}"></h1>
+        
+        <div th:if="${usuarios.empty}">No hay usuarios en la lista</div>
+        
+        <table th:if="${!usuarios.empty}" border="1">
+            <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+            <tr th:each="usuario : ${usuarios}">
+                <th th:text="${usuario.nombre}"></th>
+                <th th:text="${usuario.apellido}"></th>
+                <th th:text="${usuario.email}"></th>
+            </tr>
+        </tbody>
+    </table>
+    </body>
+</html>

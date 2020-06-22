@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <section>
+            <table border="1">
+                <thead>
+                    <th>
+                        [[${titulo}]]
+                    </th>
+                </thead>
+                <tbody>
+                  
+                    <tr>
+                        <td>
+                            ID# :
+                        </td>
+                        <td>
+                            [[${usuario.idUsuario}]]
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            RUT:
+                        </td>
+                        <td>
+                            [[${usuario.rut}]]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Nombre:
+                        </td>
+                        <td>
+                            [[${usuario.nombre}]]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Apellido:
+                        </td>
+                        <td>
+                            [[${usuario.apellido}]]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Username:
+                        </td>
+                        <td>
+                            [[${usuario.username}]]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Password:
+                        </td>
+                        <td>
+                            [[${usuario.password}]]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Email:
+                        </td>
+                        <td>
+                            [[${usuario.email}]]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Telefono:
+                        </td>
+                        <td>
+                            [[${usuario.telefono}]]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Edad:
+                        </td>
+                        <td>
+                            [[${usuario.edad}]]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Fecha de Nacimiento:
+                        </td>
+                        <td>
+                            [[${#dates.format(usuario.fechaNacimiento , 'dd MMMM YYYY' )}]]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Pais:
+                        </td>
+                        <td>
+                            [[${usuario.pais.id}]] + [[${usuario.pais.codigo}]] + [[${usuario.pais.nombre}]]
+                            
+                        </td>
+                    </tr>
+                    <tr th:each="role: ${usuario.roles}">
+                      <td>[[${role.nombre}]]</td>
+                      <td>[[${role.role}]]</td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td>Recibe Emails</td>
+                      <td>[[${usuario.habilitado}]]</td>
+                    </tr>
+                    
+                    <tr>
+                      <td>Genero</td>
+                      <td>[[${usuario.genero}]]</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </section>
+    </body>
+</html>
